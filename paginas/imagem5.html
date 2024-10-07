@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagem 5 - Álbum</title>
+    <link href="../scripts/BOOTSSTRAPCSS.css" rel="stylesheet">
+    <link href="../scripts/BOOTSSTRAPFONTAWESOME.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark custom-header">
+        <div class="container-fluid">
+            <!-- Link para o logo da marca -->
+            <img src="../imagens/logo1.png" alt="Logo" style="height: 100px;">
+            <!-- Botão para colapsar o menu no modo mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Lista de navegação com links principais -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- Links de navegação: Início, Sobre Nós, Destaques, Login e Cadastro -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="../paginas/index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Destaques</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cadastro</a>
+                    </li>
+                </ul>
+                <!-- Formulário de busca com input para digitar a pesquisa -->
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Buscar">
+                </form>
+                <!-- Botão de Dark Mode, que alterna entre o ícone de lua e sol -->
+                <button id="darkModeToggle" class="btn btn-outline-light ms-3">
+                    <i id="darkModeIcon" class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <h1 class="text-center">Imagem 5</h1>
+        <!-- Criação de um row (linha) com duas colunas -->
+        <div class="row">
+            <!-- Coluna para a imagem (50% do tamanho) -->
+            <div class="col-md-6">
+                <img src="../imagens/Album_5.png" class="img-fluid" alt="Imagem 6" style="width: 100%; max-width: 600px;">
+            </div>
+            <!-- Coluna para o seletor de tamanhos -->
+            <div class="col-md-6 d-flex flex-column align-items-start">
+                <!-- Seletor de Tamanhos -->
+                <div class="size-label">Tamanho: <span id="selected-size">P</span></div>
+                <div class="size-options">
+                    <div class="size-option active" data-size="P">P</div>
+                    <div class="size-option" data-size="M">M</div>
+                    <div class="size-option" data-size="G">G</div>
+                </div>
+                <!-- Informações sobre o tamanho -->
+                <div id="size-info" class="size-info">
+                    <p id="info-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="custom-footer text-black text-center py-3">
+        <p>&copy; 2024 Seu Site - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="../scripts/BOOTSSTRAPpopper.js"></script>
+    <script src="../scripts/BOOTSSTRAPjavascript.js"></script>
+    <script src="../scripts/darkmode.js"></script>
+    <script src="../scripts/tamanho.js"></script>
+</body>
+</html>
