@@ -1,0 +1,115 @@
+/* Estilos para Dark Mode */
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+/* Estilo para a transição das imagens */
+.image-container {
+    position: relative;
+}
+
+.card-img-top {
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.custom-header {
+    background-color: #0b0e3b; /* Cor azul personalizada */
+}
+.custom-footer {
+    background-color: #ffffff; /* Cor personalizada, pode ser qualquer outra */
+    color: #000000; /* Cor do texto (branca) */
+}
+
+.custom-footer a {
+    color: #000000; /* Cor dos links no footer */
+}
+/* Garante que o link cubra toda a imagem */
+.image-link {
+    display: block; /* Faz o link cobrir o bloco da imagem */
+    position: relative; /* Para garantir o alinhamento correto */
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: inherit; /* Mantém a cor do texto original */
+}
+
+/* Hover effect no link */
+.image-link:hover .image-container {
+    opacity: 0.8; /* Exemplo de efeito hover para a imagem */
+}
+
+/* Se você já tem um overlay que aparece no hover, você pode personalizá-lo aqui */
+.image-container {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay escuro no hover */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+.size-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.size-option {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.size-option.active {
+    border-color: black;
+    background-color: #f0f0f0;
+}
+
+.size-option:hover {
+    border-color: black;
+}
+
+.size-label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}

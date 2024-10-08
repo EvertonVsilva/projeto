@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imagem 1 - Álbum</title>
     <link href="../scripts/BOOTSSTRAPCSS.css" rel="stylesheet">
-    <link href="../scripts/BOOTSSTRAPFONTAWESOME.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../scripts/styles.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark custom-header">
@@ -39,7 +39,15 @@
                 </ul>
                 <!-- Formulário de busca com input para digitar a pesquisa -->
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Buscar">
+                    <input class="form-control me-2" list="opcoes-de-pesquisa" id="campoBusca" type="search" placeholder="Buscar..." aria-label="Buscar" oninput="verificarSelecao()">
+                    <!-- Datalist com opções de pesquisa -->
+                    <datalist id="opcoes-de-pesquisa">
+                        <option value="Inicio"></option>
+                        <option value="Calças"></option>
+                        <option value="Acessórios"></option>
+                        <option value="Tênis"></option>
+                        <option value="Moletons"></option>
+                    </datalist>
                 </form>
                 <!-- Botão de Dark Mode, que alterna entre o ícone de lua e sol -->
                 <button id="darkModeToggle" class="btn btn-outline-light ms-3">
@@ -55,24 +63,46 @@
         <div class="row">
             <!-- Coluna para a imagem (50% do tamanho) -->
             <div class="col-md-6">
-                <img src="../imagens/Album_1.png" class="img-fluid" alt="Imagem 6" style="width: 100%; max-width: 600px;">
+                <!-- Carrossel de Imagens -->
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../imagens/Album_1.png" class="d-block w-100 img-fluid" alt="Imagem 1" style="max-width: 600px;">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../imagens/Album_1.png" class="d-block w-100 img-fluid" alt="Imagem 2" style="max-width: 600px;">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../imagens/Album_1.png" class="d-block w-100 img-fluid" alt="Imagem 3" style="max-width: 600px;">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Próximo</span>
+                    </button>
+                </div>
             </div>
+            
             <!-- Coluna para o seletor de tamanhos -->
             <div class="col-md-6 d-flex flex-column align-items-start">
-                 <!-- Seletor de Tamanhos -->
-                 <div class="size-label">Tamanho: <span id="selected-size">P</span></div>
-                 <div class="size-options">
-                     <div class="size-option active" data-size="P">P</div>
-                     <div class="size-option" data-size="M">M</div>
-                     <div class="size-option" data-size="G">G</div>
-                 </div>
-                 <!-- Informações sobre o tamanho -->
-                 <div id="size-info" class="size-info">
-                     <p id="info-text"></p>
-                 </div>
-             </div>
-         </div>
-     </div>
+                <!-- Seletor de Tamanhos -->
+                <div class="size-label">Tamanho: <span id="selected-size">P</span></div>
+                <div class="size-options">
+                    <div class="size-option active" data-size="P">P</div>
+                    <div class="size-option" data-size="M">M</div>
+                    <div class="size-option" data-size="G">G</div>
+                </div>
+                <!-- Informações sobre o tamanho -->
+                <div id="size-info" class="size-info">
+                    <p id="info-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="custom-footer text-black text-center py-3">
         <p>&copy; 2024 Seu Site - Todos os direitos reservados.</p>
@@ -82,5 +112,6 @@
     <script src="../scripts/BOOTSSTRAPjavascript.js"></script>
     <script src="../scripts/darkmode.js"></script>
     <script src="../scripts/tamanho.js"></script>
+    <script src="../scripts/pesquisa.js"></script>
 </body>
 </html>
