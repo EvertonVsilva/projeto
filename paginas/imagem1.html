@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <!-- Definindo a codificação de caracteres como UTF-8 para garantir compatibilidade com caracteres especiais -->
     <meta charset="UTF-8">
+    <!-- Configurando a viewport para responsividade em dispositivos móveis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Definindo o título da página como "Imagem 1 - Álbum" -->
     <title>Imagem 1 - Álbum</title>
+    <!-- Link para o CSS do Bootstrap para estruturação de layout e estilos -->
     <link href="../scripts/BOOTSSTRAPCSS.css" rel="stylesheet">
+    <!-- Link para os ícones do FontAwesome (ícones de lua e sol, por exemplo) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <!-- Link para o CSS personalizado do site -->
     <link rel="stylesheet" href="../scripts/styles.css">
 </head>
 <body>
+    <!-- Barra de navegação principal -->
     <nav class="navbar navbar-expand-lg navbar-dark custom-header">
         <div class="container-fluid">
-            <!-- Link para o logo da marca -->
+            <!-- Logotipo da marca (tamanho fixo de 100px de altura) -->
             <img src="../imagens/logo1.png" alt="Logo" style="height: 100px;">
-            <!-- Botão para colapsar o menu no modo mobile -->
+            <!-- Botão de alternância (toggle) para dispositivos móveis -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- Lista de navegação com links principais -->
+            <!-- Links de navegação e busca -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <!-- Links de navegação: Início, Sobre Nós, Destaques, Login e Cadastro -->
+                    <!-- Links do menu de navegação para diferentes páginas -->
                     <li class="nav-item">
                         <a class="nav-link" href="../paginas/index.html">Início</a>
                     </li>
@@ -37,10 +44,10 @@
                         <a class="nav-link" href="#">Cadastro</a>
                     </li>
                 </ul>
-                <!-- Formulário de busca com input para digitar a pesquisa -->
+                <!-- Formulário de busca com lista de sugestões de pesquisa (datalist) -->
                 <form class="d-flex" role="search">
+                    <!-- Campo de pesquisa com sugestões de termos populares -->
                     <input class="form-control me-2" list="opcoes-de-pesquisa" id="campoBusca" type="search" placeholder="Buscar..." aria-label="Buscar" oninput="verificarSelecao()">
-                    <!-- Datalist com opções de pesquisa -->
                     <datalist id="opcoes-de-pesquisa">
                         <option value="Inicio"></option>
                         <option value="Calças"></option>
@@ -49,7 +56,7 @@
                         <option value="Moletons"></option>
                     </datalist>
                 </form>
-                <!-- Botão de Dark Mode, que alterna entre o ícone de lua e sol -->
+                <!-- Botão para alternar o modo escuro (dark mode), com ícone de lua/sol -->
                 <button id="darkModeToggle" class="btn btn-outline-light ms-3">
                     <i id="darkModeIcon" class="fas fa-moon"></i>
                 </button>
@@ -57,46 +64,55 @@
         </div>
     </nav>
 
+    <!-- Container principal da página -->
     <div class="container py-5">
+        <!-- Título da página -->
         <h1 class="text-center">Imagem 1</h1>
-        <!-- Criação de um row (linha) com duas colunas -->
+        <!-- Criação de uma linha (row) com duas colunas -->
         <div class="row">
-            <!-- Coluna para a imagem (50% do tamanho) -->
+            <!-- Coluna para o carrossel de imagens -->
             <div class="col-md-6">
-                <!-- Carrossel de Imagens -->
+                <!-- Carrossel Bootstrap para exibição de várias imagens -->
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <!-- Imagens dentro do carrossel -->
                     <div class="carousel-inner">
+                        <!-- Primeira imagem, definida como ativa (será a primeira a ser exibida) -->
                         <div class="carousel-item active">
                             <img src="../imagens/Album_1.png" class="d-block w-100 img-fluid" alt="Imagem 1" style="max-width: 600px;">
                         </div>
+                        <!-- Segunda imagem -->
                         <div class="carousel-item">
                             <img src="../imagens/Album_1.png" class="d-block w-100 img-fluid" alt="Imagem 2" style="max-width: 600px;">
                         </div>
+                        <!-- Terceira imagem -->
                         <div class="carousel-item">
                             <img src="../imagens/Album_1.png" class="d-block w-100 img-fluid" alt="Imagem 3" style="max-width: 600px;">
                         </div>
                     </div>
+                    <!-- Botão para ir para a imagem anterior -->
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Anterior</span>
                     </button>
+                    <!-- Botão para ir para a próxima imagem -->
                     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Próximo</span>
                     </button>
                 </div>
             </div>
-            
-            <!-- Coluna para o seletor de tamanhos -->
+
+            <!-- Coluna para o seletor de tamanhos de produto -->
             <div class="col-md-6 d-flex flex-column align-items-start">
-                <!-- Seletor de Tamanhos -->
+                <!-- Exibição do tamanho selecionado -->
                 <div class="size-label">Tamanho: <span id="selected-size">P</span></div>
+                <!-- Opções de tamanhos disponíveis -->
                 <div class="size-options">
                     <div class="size-option active" data-size="P">P</div>
                     <div class="size-option" data-size="M">M</div>
                     <div class="size-option" data-size="G">G</div>
                 </div>
-                <!-- Informações sobre o tamanho -->
+                <!-- Informações adicionais sobre o tamanho selecionado -->
                 <div id="size-info" class="size-info">
                     <p id="info-text"></p>
                 </div>
@@ -104,14 +120,20 @@
         </div>
     </div>
 
+    <!-- Rodapé da página -->
     <footer class="custom-footer text-black text-center py-3">
+        <!-- Mensagem de direitos autorais -->
         <p>&copy; 2024 Seu Site - Todos os direitos reservados.</p>
     </footer>
 
+    <!-- Scripts JS para funcionalidades do Bootstrap e interação com o carrossel -->
     <script src="../scripts/BOOTSSTRAPpopper.js"></script>
     <script src="../scripts/BOOTSSTRAPjavascript.js"></script>
+    <!-- Script para alternar o modo dark/clear -->
     <script src="../scripts/darkmode.js"></script>
+    <!-- Script para o seletor de tamanhos -->
     <script src="../scripts/tamanho.js"></script>
+    <!-- Script para o campo de pesquisa -->
     <script src="../scripts/pesquisa.js"></script>
 </body>
 </html>
