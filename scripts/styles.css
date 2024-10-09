@@ -1,115 +1,133 @@
-/* Estilos para Dark Mode */
+/* Estilos para o modo escuro (Dark Mode) */
+/* Define o fundo como uma cor escura e o texto como branco */
 .dark-mode {
-    background-color: #121212;
-    color: white;
+    background-color: #121212; /* Cor de fundo para modo escuro */
+    color: white; /* Cor do texto em modo escuro */
 }
 
-/* Estilo para a transição das imagens */
+/* Estilos para o container da imagem */
+/* Define o posicionamento relativo para o container da imagem, necessário para posicionar o overlay */
 .image-container {
-    position: relative;
+    position: relative; /* Permite o posicionamento do overlay dentro do container */
 }
 
+/* Estilos para a imagem no topo do card */
+/* Transição suave para a transformação ao passar o mouse */
 .card-img-top {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* Animação para o efeito de zoom */
 }
 
+/* Efeito hover na imagem */
+/* Aumenta o tamanho da imagem em 10% ao passar o mouse */
 .image-container:hover .card-img-top {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Efeito de zoom na imagem ao passar o mouse */
 }
 
+/* Estilos para o overlay (camada sobreposta à imagem) */
+/* Configura o overlay para cobrir toda a área da imagem e ser transparente inicialmente */
 .overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: 0.3s ease;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute; /* Posiciona o overlay em relação ao container */
+    top: 0; /* Alinha o overlay ao topo do container */
+    bottom: 0; /* Alinha o overlay à parte inferior do container */
+    left: 0; /* Alinha o overlay à esquerda do container */
+    right: 0; /* Alinha o overlay à direita do container */
+    height: 100%; /* Faz o overlay cobrir 100% da altura do container */
+    width: 100%; /* Faz o overlay cobrir 100% da largura do container */
+    opacity: 0; /* Inicia com o overlay invisível */
+    transition: 0.3s ease; /* Transição suave ao exibir o overlay */
+    background-color: rgba(0, 0, 0, 0.7); /* Cor de fundo semi-transparente */
+    display: flex; /* Alinha o texto dentro do overlay */
+    justify-content: center; /* Centraliza o texto horizontalmente */
+    align-items: center; /* Centraliza o texto verticalmente */
 }
 
+/* Exibe o overlay ao passar o mouse sobre o container da imagem */
 .image-container:hover .overlay {
-    opacity: 1;
+    opacity: 1; /* Faz o overlay aparecer com opacidade total */
 }
 
+/* Estilos para o texto dentro do overlay */
 .text {
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-}
-.custom-header {
-    background-color: #0b0e3b; /* Cor azul personalizada */
-}
-.custom-footer {
-    background-color: #ffffff; /* Cor personalizada, pode ser qualquer outra */
-    color: #000000; /* Cor do texto (branca) */
+    color: white; /* Cor do texto no overlay */
+    font-size: 20px; /* Tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    text-align: center; /* Alinha o texto ao centro */
 }
 
-.custom-footer a {
-    color: #000000; /* Cor dos links no footer */
+/* Estilos personalizados para o header (cabeçalho) */
+/* Define uma cor de fundo azul personalizada */
+.custom-header {
+    background-color: #0b0e3b; /* Cor azul para o cabeçalho */
 }
-/* Garante que o link cubra toda a imagem */
+
+/* Estilos personalizados para o footer (rodapé) */
+/* Define uma cor de fundo branca e texto preto */
+.custom-footer {
+    background-color: #ffffff; /* Cor de fundo branca */
+    color: #000000; /* Cor do texto no footer */
+}
+
+/* Estilos para os links dentro do footer */
+/* Define a cor dos links como preto */
+.custom-footer a {
+    color: #000000; /* Cor dos links no rodapé */
+}
+
+/* Estilos para o link que envolve a imagem */
+/* Define que o link cobre todo o container da imagem e remove a decoração do texto */
 .image-link {
-    display: block; /* Faz o link cobrir o bloco da imagem */
-    position: relative; /* Para garantir o alinhamento correto */
+    display: block; /* Faz o link cobrir o container inteiro da imagem */
+    position: relative; /* Necessário para o posicionamento correto */
     text-decoration: none; /* Remove o sublinhado do link */
     color: inherit; /* Mantém a cor do texto original */
 }
 
-/* Hover effect no link */
+/* Efeito hover no link que envolve a imagem */
+/* Ao passar o mouse, o container da imagem fica um pouco transparente */
 .image-link:hover .image-container {
-    opacity: 0.8; /* Exemplo de efeito hover para a imagem */
+    opacity: 0.8; /* Reduz a opacidade do container da imagem ao passar o mouse */
 }
 
-/* Se você já tem um overlay que aparece no hover, você pode personalizá-lo aqui */
-.image-container {
-    position: relative;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Overlay escuro no hover */
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
+/* Estilos para o overlay quando o hover está ativo */
+/* Ao passar o mouse sobre a imagem, o overlay fica visível */
 .image-container:hover .overlay {
-    opacity: 1;
+    opacity: 1; /* Torna o overlay visível ao passar o mouse */
 }
+
+/* Estilos para a lista de opções de tamanhos */
+/* Define o espaçamento e o layout em linha para as opções de tamanho */
 .size-options {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
+    display: flex; /* Exibe as opções de tamanho em linha */
+    gap: 10px; /* Espaço entre cada opção de tamanho */
+    margin-top: 10px; /* Espaçamento acima da lista de opções */
 }
 
+/* Estilos para cada opção de tamanho */
+/* Define borda, preenchimento e estilo de hover para as opções */
 .size-option {
-    padding: 10px 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
+    padding: 10px 20px; /* Espaçamento interno nas opções */
+    border: 1px solid #ccc; /* Borda leve ao redor de cada opção */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor em formato de mão ao passar o mouse */
+    transition: background-color 0.3s, border-color 0.3s; /* Transição suave ao mudar a cor de fundo e da borda */
 }
 
+/* Estilos para a opção de tamanho ativa */
+/* Define borda e fundo diferentes para a opção selecionada */
 .size-option.active {
-    border-color: black;
-    background-color: #f0f0f0;
+    border-color: black; /* Borda preta para a opção ativa */
+    background-color: #f0f0f0; /* Fundo claro para a opção ativa */
 }
 
+/* Efeito hover para as opções de tamanho */
+/* Muda a cor da borda ao passar o mouse */
 .size-option:hover {
-    border-color: black;
+    border-color: black; /* Borda preta ao passar o mouse */
 }
 
+/* Estilos para o rótulo de tamanho */
+/* Define o tamanho da fonte e o espaçamento inferior para o rótulo */
 .size-label {
-    font-size: 16px;
-    margin-bottom: 5px;
+    font-size: 16px; /* Tamanho da fonte para o rótulo */
+    margin-bottom: 5px; /* Espaçamento abaixo do rótulo */
 }
