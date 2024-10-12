@@ -131,3 +131,51 @@
     font-size: 16px; /* Tamanho da fonte para o rótulo */
     margin-bottom: 5px; /* Espaçamento abaixo do rótulo */
 }
+/* Define um contêiner para a imagem com posicionamento relativo */
+.image-container-social {
+    position: relative; /* Permite que elementos filhos posicionados de forma absoluta se refiram a este contêiner */
+    width: 100%; /* Define a largura como 100% da largura da tela */
+    height: 100vh; /* Define a altura como 100% da altura da viewport (tela) */
+  }
+  
+/* Estiliza o container da lista social */
+.social-list {
+    position: absolute;
+    bottom: 500px; /* Ajusta a distância do rodapé */
+    left: 10%; /* Alinha ao centro horizontalmente */
+    transform: translateX(-50%); /* Centraliza a lista de ícones */
+    display: flex; /* Utiliza flexbox para alinhar os itens */
+    gap: 15px; /* Adiciona espaçamento entre os ícones */
+    list-style: none; /* Remove as bolinhas da lista */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
+}
+.btn-login {
+    position: absolute;
+    top: 60%; /* Ajusta a posição vertical para ficar abaixo do centro */
+    left: 53%; /* Alinha horizontalmente ao centro */
+    transform: translate(-50%, -50%); /* Centraliza o botão horizontalmente */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    font-size: 18px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito no texto do botão */
+    background-color: #007bff; /* Cor do fundo do botão */
+    color: white; /* Cor do texto do botão */
+    border-radius: 5px; /* Bordas arredondadas */
+    text-align: center; /* Centraliza o texto */
+}
+.btn-cadastro {
+    position: absolute;
+    top: 60%; /* Ajusta a posição vertical para ficar abaixo do centro */
+    left: 47%; /* Alinha horizontalmente ao centro */
+    transform: translate(-50%, -50%); /* Centraliza o botão horizontalmente */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    font-size: 18px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito no texto do botão */
+    background-color: #007bff; /* Cor do fundo do botão */
+    color: white; /* Cor do texto do botão */
+    border-radius: 5px; /* Bordas arredondadas */
+    text-align: center; /* Centraliza o texto */
+}
+.btn-login:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+}
