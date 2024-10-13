@@ -5,7 +5,7 @@ function verificarSelecao() {
     // Mapeamento das opções para suas respectivas URLs
     var opcoes = {
         "inicio": "../paginas/index.html",
-        "calças": "calcas.html",
+        "destaques": "../paginas/destaques.html",
         "acessórios": "acessorios.html",
         "tênis": "tenis.html",
         "moletons": "moletons.html"

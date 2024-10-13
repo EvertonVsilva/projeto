@@ -133,10 +133,11 @@
 }
 /* Define um contêiner para a imagem com posicionamento relativo */
 .image-container-social {
-    position: relative; /* Permite que elementos filhos posicionados de forma absoluta se refiram a este contêiner */
-    width: 100%; /* Define a largura como 100% da largura da tela */
-    height: 100vh; /* Define a altura como 100% da altura da viewport (tela) */
-  }
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Garante que a imagem não saia da tela em dispositivos menores */
+}
   
 /* Estiliza o container da lista social */
 .social-list {
@@ -150,32 +151,57 @@
     padding: 0; /* Remove o padding padrão */
     margin: 0; /* Remove a margem padrão */
 }
+.btn-login, .btn-cadastro {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
 .btn-login {
-    position: absolute;
-    top: 60%; /* Ajusta a posição vertical para ficar abaixo do centro */
-    left: 53%; /* Alinha horizontalmente ao centro */
-    transform: translate(-50%, -50%); /* Centraliza o botão horizontalmente */
-    padding: 10px 20px; /* Espaçamento interno do botão */
-    font-size: 18px; /* Tamanho da fonte */
-    font-weight: bold; /* Negrito no texto do botão */
-    background-color: #007bff; /* Cor do fundo do botão */
-    color: white; /* Cor do texto do botão */
-    border-radius: 5px; /* Bordas arredondadas */
-    text-align: center; /* Centraliza o texto */
+    top: 59%;
 }
+
 .btn-cadastro {
-    position: absolute;
-    top: 60%; /* Ajusta a posição vertical para ficar abaixo do centro */
-    left: 47%; /* Alinha horizontalmente ao centro */
-    transform: translate(-50%, -50%); /* Centraliza o botão horizontalmente */
-    padding: 10px 20px; /* Espaçamento interno do botão */
-    font-size: 18px; /* Tamanho da fonte */
-    font-weight: bold; /* Negrito no texto do botão */
-    background-color: #007bff; /* Cor do fundo do botão */
-    color: white; /* Cor do texto do botão */
-    border-radius: 5px; /* Bordas arredondadas */
-    text-align: center; /* Centraliza o texto */
+    top: 65%;
 }
+
 .btn-login:hover {
     background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+}
+/* Ajuste do tamanho da fonte e layout em telas menores */
+@media (max-width: 768px) {
+    .btn-login, .btn-cadastro {
+        width: 80%;
+        font-size: 16px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 10px;
+    }
+}
+
+/* Ajustes para telas muito pequenas (celulares) */
+@media (max-width: 576px) {
+    .btn-login, .btn-cadastro {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .navbar-brand img {
+        height: 80px; /* Reduz o tamanho do logo */
+    }
+
+    .navbar-toggler {
+        margin-top: 10px;
+    }
 }
