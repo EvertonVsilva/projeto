@@ -85,4 +85,5 @@ document.getElementById('logoutButton')?.addEventListener('click', function () {
     destaquesButtonContainer.style.display = 'none';
 
     alert('Você saiu da sua conta!');
+    window.location.reload();
 });
