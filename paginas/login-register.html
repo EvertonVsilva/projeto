@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .wrapper {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .form-field {
+            margin-bottom: 15px;
+        }
+
+        .form-field input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background: #100c3c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        .text-center a {
+            color: #007bff;
+        }
+
+        .text-center a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="https://i.imgur.com/o9TLd1R.png" alt="Logo" width="100">
+        </div>
+        <div class="text-center mt-4 name">
+            Faça seu Login
+        </div>
+        <form class="p-3 mt-3" id="loginForm">
+            <div class="form-field d-flex align-items-center">
+                <input type="text" name="userName" id="userName" placeholder="Usuário" required>
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <input type="password" name="password" id="pwd" placeholder="Senha" required>
+            </div>
+            <button type="submit" class="btn mt-3">Login</button>
+        </form>
+        <div class="text-center fs-6">
+            <a href="..//paginas/index.html">Voltar</a><br>
+            <a href="..//paginas/cadastro.html">Registrar-se</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const userNameInput = document.getElementById('userName').value;
+            const passwordInput = document.getElementById('pwd').value;
+
+            // Recuperar dados do LocalStorage
+            const storedUserData = JSON.parse(localStorage.getItem('userData'));
+
+            if (storedUserData) {
+                const { username, password } = storedUserData;
+
+                // Verifica se os dados correspondem
+                if (userNameInput === username && passwordInput === password) {
+                    alert('Login realizado com sucesso!');
+                    // Define o usuário como logado
+                    localStorage.setItem('isLoggedIn', 'true');
+                    // Redirecionar para outra página
+                    window.location.href = "..//paginas/index.html";
+                } else {
+                    alert('Usuário ou senha inválidos.');
+                }
+            } else {
+                alert('Nenhum usuário registrado. Por favor, registre-se antes de fazer login.');
+            }
+        });
+    </script>
+</body>
+
+</html>

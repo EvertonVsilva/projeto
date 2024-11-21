@@ -6,15 +6,15 @@
     <!-- Configurando a viewport para responsividade em dispositivos móveis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Definindo o título da página como "Imagem 1 - Álbum" -->
-    <title>Vinho</title>
+    <title>Sobre Nós</title>
     <!-- Link para o CSS do Bootstrap para estruturação de layout e estilos -->
     <link href="../scripts/BOOTSSTRAPCSS.css" rel="stylesheet">
     <!-- Link para os ícones do FontAwesome (ícones de lua e sol, por exemplo) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <!-- Link para o CSS personalizado do site -->
     <link rel="stylesheet" href="../scripts/styles.css">
-    
-    <link rel="stylesheet" href="../scripts/pesquisa.css">
+
+    <link rel="stylesheet" href="../scripts/pesquisa.css"
 </head>
 <body>
     <!-- Barra de navegação principal -->
@@ -34,12 +34,8 @@
                         <a class="nav-link" href="../paginas/index.html">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="..//paginas/sobrenos.html">Sobre Nós</a>
+                        <a class="nav-link" href="#">Sobre Nós</a>
                     </li>
-                    <li class="nav-item" >
-                        <a class="nav-link" href="../paginas/destaques.html">Destaques</a>
-                    </li>
-                    
                 </ul>
                 <!-- Formulário de busca com lista de sugestões de pesquisa (datalist) -->
                 <div class="search-container">
@@ -48,7 +44,6 @@
                     <!-- Menu suspenso de sugestões -->
                     <div id="suggestionsContainer" class="suggestions">
                         <div class="suggestion-item" onclick="selecionarSugestao('Início')">Início</div>
-                        <div class="suggestion-item" data-type="destaques" onclick="selecionarSugestao('Destaques')">Destaques</div>
                         <div class="suggestion-item" onclick="selecionarSugestao('Login')">Login</div>
                         <div class="suggestion-item" onclick="selecionarSugestao('Cadastro')">Cadastro</div>
                     </div>
@@ -60,63 +55,32 @@
             </div>
         </div>
     </nav>
-
-    <!-- Container principal da página -->
-    <div class="container py-5">
-        <!-- Título da página -->
-        <h1 class="text-center">Vinho</h1>
-        <!-- Criação de uma linha (row) com duas colunas -->
-        <div class="row">
-            <!-- Coluna para o carrossel de imagens -->
-            <div class="col-md-6">
-                <!-- Carrossel Bootstrap para exibição de várias imagens -->
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                    <!-- Imagens dentro do carrossel -->
-                    <div class="carousel-inner">
-                        <!-- Primeira imagem, definida como ativa (será a primeira a ser exibida) -->
-                        <div class="carousel-item active">
-                            <img src="https://i.imgur.com/UGbq35D.png" class="d-block w-100 img-fluid" alt="Imagem 1" style="max-width: 600px;"referrerpolicy="no-referrer">
-                        </div>
-                        <!-- Segunda imagem -->
-                        <div class="carousel-item">
-                            <img src="https://i.imgur.com/UGbq35D.png" class="d-block w-100 img-fluid" alt="Imagem 2" style="max-width: 600px;"referrerpolicy="no-referrer">
-                        </div>
-                        <!-- Terceira imagem -->
-                        <div class="carousel-item">
-                            <img src="https://i.imgur.com/UGbq35D.png" class="d-block w-100 img-fluid" alt="Imagem 3" style="max-width: 600px;"referrerpolicy="no-referrer">
-                        </div>
-                    </div>
-                    <!-- Botão para ir para a imagem anterior -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Anterior</span>
-                    </button>
-                    <!-- Botão para ir para a próxima imagem -->
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Próximo</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Coluna para o seletor de tamanhos de produto -->
-            <div class="col-md-6 d-flex flex-column align-items-start">
-                <!-- Exibição do tamanho selecionado -->
-                <div class="size-label">Tamanho: <span id="selected-size">P</span></div>
-                <!-- Opções de tamanhos disponíveis -->
-                <div class="size-options">
-                    <div class="size-option active" data-size="P">P</div>
-                    <div class="size-option" data-size="M">M</div>
-                    <div class="size-option" data-size="G">G</div>
-                </div>
-                <!-- Informações adicionais sobre o tamanho selecionado -->
-                <div id="size-info" class="size-info">
-                    <p id="info-text"></p>
-                    <img id="size-image" src="" alt="Imagem do Tamanho" style="display: none;">
-                </div>
-            </div>
+    <div class="container">
+        <h1>Sobre Nós</h1>
+        <p>Bem-vindo ! Somos uma equipe dedicada a oferecer as melhores soluções para você. Nosso objetivo é fornecer produtos e serviços de alta qualidade, sempre com o compromisso de atender às necessidades de nossos clientes.</p>
+        
+        <div class="section-content">
+          <h2 class="section-title">Nossa Missão</h2>
+          <p>A nossa missão é entregar excelência e inovação em tudo o que fazemos. Estamos comprometidos com a qualidade, com o respeito aos nossos clientes e com o desenvolvimento sustentável.</p>
         </div>
-    </div>
+    
+        <div class="section-content">
+          <h2 class="section-title">Nossos Valores</h2>
+          <ul>
+            <li>Compromisso com a qualidade</li>
+            <li>Inovação constante</li>
+            <li>Transparência e ética</li>
+            <li>Responsabilidade social e ambiental</li>
+          </ul>
+        </div>
+    
+        <div class="section-content">
+          <h2 class="section-title">Nossa Equipe</h2>
+          <p>Contamos com uma equipe experiente e apaixonada pelo que faz. Cada um de nós tem um papel fundamental para alcançar os nossos objetivos e garantir a satisfação dos nossos clientes.</p>
+        </div>
+        <a href="https://www.instagram.com/lojameujaleco/">Instagram</a><br>
+        <a href="https://github.com/evertonvsilva">Github</a>
+      </div>
 
     <!-- Rodapé da página -->
     <footer class="custom-footer text-black text-center py-3">

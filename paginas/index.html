@@ -8,6 +8,7 @@
     <link rel="icon" href="../imagens/logo1.png" type="image/png">
     <link href="../scripts/BOOTSSTRAPCSS.css" rel="stylesheet">
     <link rel="stylesheet" href="../scripts/styles.css">
+    <link rel="stylesheet" href="../scripts/pesquisa.css">
     <link rel="stylesheet" href="../scripts/social.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -25,22 +26,26 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Sobre Nós</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../paginas/destaques.html">Destaques</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Cadastro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="..//paginas/sobrenos.html">Sobre Nós</a></li>
+                    <li id="destaquesButtonContainer"></li>
+                    <li class="nav-item"><a class="nav-link" href="..//paginas/login-register.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="..//paginas/cadastro.html">Cadastro</a></li>
+                    <li id="logoutButtonContainer" class="nav-item" style="display: none;">
+                        <button id="logoutButton" class="btn btn-danger">Deslogar</button>
+                    <li id="limparButtonContainer" class="nav-item" style="display: none;">
+                        <button id="limparButton" class="btn btn-danger">Limpar</button>
                 </ul>
-                <form class="d-flex" role="search">
-                    <!-- Campo de pesquisa com sugestões de termos populares -->
-                    <input class="form-control me-2" list="opcoes-de-pesquisa" id="campoBusca" type="search" placeholder="Buscar..." aria-label="Buscar" oninput="verificarSelecao()">
-                    <datalist id="opcoes-de-pesquisa">
-                        <option value="Inicio"></option>
-                        <option value="Destaques"></option>
-                        <option value="Login"></option>
-                        <option value="Cadastro"></option>
-                        <option value=""></option>
-                    </datalist>
-                </form>
+                <div class="search-container">
+                    <input class="form-control me-2" id="campoBusca" type="search" placeholder="Buscar..." aria-label="Buscar" oninput="verificarSelecao()" onclick="mostrarSugestoes()">
+                    
+                    <!-- Menu suspenso de sugestões -->
+                    <div id="suggestionsContainer" class="suggestions">
+                        <div class="suggestion-item" onclick="selecionarSugestao('Início')">Início</div>
+                        <div class="suggestion-item" data-type="destaques" onclick="selecionarSugestao('Destaques')">Destaques</div>
+                        <div class="suggestion-item" onclick="selecionarSugestao('Login')">Login</div>
+                        <div class="suggestion-item" onclick="selecionarSugestao('Cadastro')">Cadastro</div>
+                    </div>
+                </div>
                 <button id="darkModeToggle" class="btn btn-outline-light ms-3">
                     <i id="darkModeIcon" class="fas fa-moon"></i>
                 </button>
@@ -49,11 +54,13 @@
     </nav>
 
     <!-- Container da imagem de background com o texto e ícones sociais -->
-    <div class="image-container-social">
-        <img src="https://i.imgur.com/JQd5Qqp.png" style="border: none; width: 100%; height: auto;" alt="" referrerpolicy="no-referrer" />
-        <div class="container">
+    <div >
+        <p class="fundo-texto"> Bem vindo, Somos um Catalogo Virtual </p><br><br>
+        <p class="fundo-texto1"> Estamos aqui para lhe auxiliar na escolha de cores e tamanhos desejados</p>
+    </div>
+    <div class="image-container-social" >
             <!-- Botão de Login centralizado -->
-            <a href="login.html" class="btn btn-primary btn-login">Login</a>
+            <a href="..//paginas/login-register.html" class="btn btn-primary btn-login">Login</a >
             <a href="cadastro.html" class="btn btn-primary btn-cadastro">Cadastro</a>
             <ul class="social-list">
                 <li class="icon-content">
@@ -83,6 +90,9 @@
             </ul>
         </div>
     </div>
+    <div class="div-container">
+        <img src="https://i.imgur.com/o9TLd1R.png" alt="Logo" style="height: 500px;" referrerpolicy="no-referrer" class="meio-index">
+    </div>
     <!-- Scripts JS para funcionalidades do Bootstrap e interação com o carrossel -->
     <script src="../scripts/BOOTSSTRAPpopper.js"></script>
     <script src="../scripts/BOOTSSTRAPjavascript.js"></script>
@@ -92,6 +102,8 @@
     <script src="../scripts/tamanho.js"></script>
     <!-- Script para o campo de pesquisa -->
     <script src="../scripts/pesquisa.js"></script>
+    
+    <script src="..//scripts/isloggedin.js"></script>
 </body>
 
 </html>

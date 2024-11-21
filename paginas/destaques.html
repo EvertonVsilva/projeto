@@ -16,6 +16,8 @@
     
     <!-- Incluo os ícones do FontAwesome para usar o ícone de lua/sol no botão de dark mode -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../scripts/pesquisa.css">
     
 </head>
 <body>
@@ -37,30 +39,30 @@
                         <a class="nav-link" href="index.html">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sobre Nós</a>
+                        <a class="nav-link" href="..//paginas/sobrenos.html">Sobre Nós</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../paginas/destaques.html">Destaques</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                    <li class="nav-item" hidden>
+                        <a class="nav-link" href="..//paginas/login-register.html">Login</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" hidden>
                         <a class="nav-link" href="#">Cadastro</a>
                     </li>
                 </ul>
                 <!-- Formulário de busca com input para digitar a pesquisa -->
-                <form class="d-flex" role="search" onsubmit="return redirecionarPesquisa()">
-                    <input class="form-control me-2" list="opcoes-de-pesquisa" id="campoBusca" type="search" placeholder="Buscar..." aria-label="Buscar">
-                    <!-- Datalist com opções de pesquisa -->
-                    <datalist id="opcoes-de-pesquisa">
-                        <option value="Inicio"></option>
-                        <option value="Destaques"></option>
-                        <option value="Login"></option>
-                        <option value="Cadastro"></option>
-                        <option value=""></option>
-                    </datalist>
-                </form>
+                <div class="search-container">
+                    <input class="form-control me-2" id="campoBusca" type="search" placeholder="Buscar..." aria-label="Buscar" oninput="verificarSelecao()" onclick="mostrarSugestoes()">
+                    
+                    <!-- Menu suspenso de sugestões -->
+                    <div id="suggestionsContainer" class="suggestions">
+                        <div class="suggestion-item" onclick="selecionarSugestao('Início')">Início</div>
+                        <div class="suggestion-item" data-type="destaques" onclick="selecionarSugestao('Destaques')">Destaques</div>
+                        <div class="suggestion-item" onclick="selecionarSugestao('Login')">Login</div>
+                        <div class="suggestion-item" onclick="selecionarSugestao('Cadastro')">Cadastro</div>
+                    </div>
+                </div>
                 <!-- Botão de Dark Mode, que alterna entre o ícone de lua e sol -->
                 <button id="darkModeToggle" class="btn btn-outline-light ms-3">
                     <i id="darkModeIcon" class="fas fa-moon"></i>
@@ -177,7 +179,7 @@
 
     <!-- Script do modo Dark com ícone -->
     <script src="../scripts/darkmode.js"></script>
+    
     <script src="../scripts/pesquisa.js"></script>
-
 </body>
 </html>
