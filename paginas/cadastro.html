@@ -46,6 +46,11 @@
         <div class="invalid-feedback">A senha deve ter pelo menos 7 caracteres, começar com uma letra maiúscula, conter um número e um caractere especial.</div>
       </div>
       <div class="mb-3">
+        <label for="confirmPassword" class="form-label">Confirmação de Senha</label>
+        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirme sua senha" required>
+        <div class="invalid-feedback">As senhas não coincidem.</div>
+      </div>
+      <div class="mb-3">
         <label for="cep" class="form-label">CEP</label>
         <input type="text" class="form-control" id="cep" placeholder="Digite seu CEP" required onblur="buscarEndereco()">
       </div>
@@ -78,6 +83,7 @@
       const username = document.getElementById('username');
       const email = document.getElementById('email');
       const password = document.getElementById('password');
+      const confirmPassword = document.getElementById('confirmPassword');
       const cep = document.getElementById('cep');
       let isValid = true;
 
@@ -105,6 +111,14 @@
         isValid = false;
       } else {
         password.classList.remove('is-invalid');
+      }
+
+      // Validação de confirmação de senha
+      if (password.value !== confirmPassword.value) {
+        confirmPassword.classList.add('is-invalid');
+        isValid = false;
+      } else {
+        confirmPassword.classList.remove('is-invalid');
       }
 
       if (isValid) {
