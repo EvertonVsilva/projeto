@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../scripts/pesquisa.css">
     <link rel="stylesheet" href="../scripts/social.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-    
+
 </head>
 
 <body>
@@ -37,12 +37,14 @@
                         <button id="limparButton" class="btn btn-danger">Limpar</button>
                 </ul>
                 <div class="search-container">
-                    <input class="form-control me-2" id="campoBusca" type="search" placeholder="Buscar..." aria-label="Buscar" oninput="verificarSelecao()" onclick="mostrarSugestoes()">
-                    
+                    <input class="form-control me-2" id="campoBusca" type="search" placeholder="Buscar..."
+                        aria-label="Buscar" oninput="verificarSelecao()" onclick="mostrarSugestoes()">
+
                     <!-- Menu suspenso de sugestões -->
                     <div id="suggestionsContainer" class="suggestions">
                         <div class="suggestion-item" onclick="selecionarSugestao('Início')">Início</div>
-                        <div class="suggestion-item" data-type="destaques" onclick="selecionarSugestao('Destaques')">Destaques</div>
+                        <div class="suggestion-item" data-type="destaques" onclick="selecionarSugestao('Destaques')">
+                            Destaques</div>
                         <div class="suggestion-item" onclick="selecionarSugestao('Login')">Login</div>
                         <div class="suggestion-item" onclick="selecionarSugestao('Cadastro')">Cadastro</div>
                     </div>
@@ -54,15 +56,176 @@
         </div>
     </nav>
 
-    <!-- Container da imagem de background com o texto e ícones sociais -->
-    <div >
-        <p class="fundo-texto"> Bem vindo, Somos um Catalogo Virtual </p><br><br>
-        <p class="fundo-texto1"> Estamos aqui para lhe auxiliar na escolha de cores e tamanhos desejados</p>
-    </div>
+    <!-- HERO / BANNER COM TEXTO -->
+    <section class="hero position-relative">
+        <div class="container-fluid px-0">
+            <!-- Imagem do banner -->
+            <img src="../banner.png" id="heroImage" alt="Profissional da saúde" class="img-fluid w-100 d-block">
 
-    <div class="div-container">
-        <img src="https://i.imgur.com/o9TLd1R.png" alt="Logo" style="height: 500px;" referrerpolicy="no-referrer" >
-    </div>
+            <!-- Texto sobreposto à imagem -->
+            <div class="hero-text position-absolute top-50 start-50 translate-middle text-center text-white p-3"
+                style="background: rgba(0,0,0,0.4); border-radius: 8px; width: fit-content; max-width: 90%;">
+                <p class="fw-bold mb-2 fs-5">Bem-vindo, Somos um Catálogo Virtual</p>
+                <p class="fs-6 mb-0">Estamos aqui para lhe auxiliar na escolha de cores e tamanhos desejados</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PRODUTOS EM DESTAQUE -->
+    <section id="produtos" class="py-5">
+        <div class="container">
+            <h2 class="h4 mb-4 text-center">Produtos em Destaque</h2>
+            <div class="row g-4">
+                <!-- Produto 1 -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="../jaleco-feminino.png" class="card-img-top" alt="Jaleco Feminino">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Jaleco Feminino</h5>
+                            <p class="fw-bold">R$ 99,90</p>
+                            <a href="#" class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produto 2 -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="../jaleco-masculino.jpg" class="card-img-top" alt="Jaleco Masculino">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Jaleco Masculino</h5>
+                            <p class="fw-bold">R$ 104,90</p>
+                            <a href="#" class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produto 3 -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="../calcado-hospitalar.jpg" class="card-img-top" alt="Scrub">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Calçado Hospitalar</h5>
+                            <p class="fw-bold">R$ 129,90</p>
+                            <a href="#" class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFÍCIOS COM CARDS E IMAGENS CENTRALIZADAS -->
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="h5 mb-4">Por que escolher nossos uniformes?</h2>
+            <div class="row g-4 justify-content-center">
+
+                <!-- Card 1 -->
+                <div class="col-md-3">
+                    <div class="card h-100 shadow-sm p-4 d-flex flex-column align-items-center">
+                        <img src="../conforto.png" alt="Conforto" class="mb-3" style="width:60px; height:60px;">
+                        <h5 class="card-title">Conforto</h5>
+                        <p class="card-text text-center">Tecidos respiráveis e confortáveis</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-3">
+                    <div class="card h-100 shadow-sm p-4 d-flex flex-column align-items-center">
+                        <img src="../entrega-rapida.png" alt="Entrega Rápida" class="mb-3"
+                            style="width:60px; height:60px;">
+                        <h5 class="card-title">Entrega Rápida</h5>
+                        <p class="card-text text-center">Entrega rápida em todo o Brasil</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-3">
+                    <div class="card h-100 shadow-sm p-4 d-flex flex-column align-items-center">
+                        <img src="../durabilidade.png" alt="Durabilidade" class="mb-3" style="width:60px; height:60px;">
+                        <h5 class="card-title">Durabilidade</h5>
+                        <p class="card-text text-center">Fácil de lavar e durável</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-md-3">
+                    <div class="card h-100 shadow-sm p-4 d-flex flex-column align-items-center">
+                        <img src="../personalizacao.png" alt="Personalização" class="mb-3"
+                            style="width:60px; height:60px;">
+                        <h5 class="card-title">Personalização</h5>
+                        <p class="card-text text-center">Personalização com logo da clínica</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- QUEM SOMOS -->
+    <section id="quem-somos" class="py-5 bg-white">
+        <div class="container text-center">
+            <!-- Ícone externo centralizado -->
+            <img src="../roupa-hospitalar.png" alt="Ícone hospitalar" class="mb-3 rounded-circle shadow d-block mx-auto"
+                style="width:120px; height:120px;">
+            <h2 class="h5">Quem Somos</h2>
+            <p class="mt-3">Somos especialistas em roupas hospitalares, oferecendo qualidade, conforto e
+                confiança para profissionais da saúde.</p>
+        </div>
+    </section>
+
+
+    <!-- CALL TO ACTION FINAL -->
+    <section class="py-5 text-center bg-light">
+        <div class="container">
+            <h2 class="h5 mb-3">Pronto para renovar seu uniforme hospitalar?</h2>
+            <a href="#produtos" class="btn btn-primary btn-lg me-2">Comprar Agora</a>
+            <a href="https://wa.me/5511999999999?text=Olá%2C+quero+um+orçamento" target="_blank"
+                class="btn btn-success btn-lg">Fale no WhatsApp</a>
+        </div>
+    </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="py-4 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <!-- Links -->
+                <div class="col-md-4">
+                    <h6>Links Rápidos</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#produtos" class="text-white text-decoration-none">Produtos</a></li>
+                        <li><a href="sobrenos.html" class="text-white text-decoration-none">Quem Somos</a></li>
+                    </ul>
+                </div>
+                <!-- Contato -->
+                <div class="col-md-4">
+                    <h6>Contato</h6>
+                    <p class="small mb-1">WhatsApp: (21) 91234-5678</p>
+                    <p class="small mb-1">E-mail: meujaleco@outlook.com.br</p>
+                </div>
+                <!-- Empresa -->
+                <div class="col-md-4">
+                    <h6>Institucional</h6>
+                    <p class="small mb-1">CNPJ: 12.345.678/0001-99</p>
+                    <p class="small">Aceitamos: Visa · Pix · Boleto</p>
+                </div>
+            </div>
+            <div class="text-center small mt-3">
+                © <span id="year"></span> Uniformes Saúde — Todos os direitos reservados
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Ano automático no rodapé
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+
+    <!-- <div class="div-container">
+        <img src="https://i.imgur.com/o9TLd1R.png" alt="Logo" style="height: 500px;" referrerpolicy="no-referrer">
+    </div> -->
     <!-- Scripts JS para funcionalidades do Bootstrap e interação com o carrossel -->
     <script src="../scripts/BOOTSSTRAPpopper.js"></script>
     <script src="../scripts/BOOTSSTRAPjavascript.js"></script>
@@ -72,7 +235,7 @@
     <script src="../scripts/tamanho.js"></script>
     <!-- Script para o campo de pesquisa -->
     <script src="../scripts/pesquisa.js"></script>
-    
+
     <script src="..//scripts/isloggedin.js"></script>
 </body>
 
