@@ -29,37 +29,44 @@
     <!-- Barra de navegação principal -->
     <nav class="navbar navbar-expand-lg navbar-dark custom-header">
         <div class="container-fluid">
-            <!-- Logotipo da marca (tamanho fixo de 100px de altura) -->
             <img src="https://i.imgur.com/o9TLd1R.png" alt="Logo" style="height: 100px;" referrerpolicy="no-referrer">
-            <!-- Botão de alternância (toggle) para dispositivos móveis -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- Links de navegação e busca -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <!-- Links do menu de navegação para diferentes páginas -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="../paginas/index.html">Início</a>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="..//paginas/sobrenos.html">Sobre Nós</a></li>
+                    <li id="destaquesButtonContainer"></li>
+                    <li class="nav-item"><a class="nav-link" href="..//paginas/login-register.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="..//paginas/cadastro.html">Cadastro</a></li>
+                    <li class="nav-item nav-dropdown"><a class="nav-link" href="..//paginas/destaques.html">Catalogo</a>
+                        <div class="nav-dropdown-content">
+                            <a href="..//paginas/imagem1.html">Jaleco vinho</a>
+                            <a href="..//paginas/imagem2.html">Jaleco roxo</a>
+                            <a href="..//paginas/imagem3.html">Jaleco cinza</a>
+                            <a href="..//paginas/imagem4.html">Jaleco verde militar</a>
+                            <a href="..//paginas/imagem5.html">Jaleco jade</a>
+                            <a href="..//paginas/imagem6.html">Jaleco preto</a>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sobre Nós</a>
-                    </li>
+                    <li id="logoutButtonContainer" class="nav-item" style="display: none;">
+                        <button id="logoutButton" class="btn btn-danger">Deslogar</button>
+                    <li id="limparButtonContainer" class="nav-item" style="display: none;">
+                        <button id="limparButton" class="btn btn-danger">Limpar</button>
                 </ul>
-                <!-- Formulário de busca com lista de sugestões de pesquisa (datalist) -->
                 <div class="search-container">
-                    <input class="form-control me-2" id="campoBusca" type="search" placeholder="Buscar..."
-                        aria-label="Buscar" oninput="verificarSelecao()" onclick="mostrarSugestoes()">
-
+                    <input class="form-control me-2" id="campoBusca" type="search" placeholder="Buscar..." aria-label="Buscar" oninput="verificarSelecao()" onclick="mostrarSugestoes()">
+                    
                     <!-- Menu suspenso de sugestões -->
                     <div id="suggestionsContainer" class="suggestions">
                         <div class="suggestion-item" onclick="selecionarSugestao('Início')">Início</div>
+                        <div class="suggestion-item" data-type="destaques" onclick="selecionarSugestao('Destaques')">Destaques</div>
                         <div class="suggestion-item" onclick="selecionarSugestao('Login')">Login</div>
                         <div class="suggestion-item" onclick="selecionarSugestao('Cadastro')">Cadastro</div>
                     </div>
                 </div>
-                <!-- Botão para alternar o modo escuro (dark mode), com ícone de lua/sol -->
                 <button id="darkModeToggle" class="btn btn-outline-light ms-3">
                     <i id="darkModeIcon" class="fas fa-moon"></i>
                 </button>

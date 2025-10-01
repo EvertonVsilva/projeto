@@ -31,20 +31,28 @@
                     <li id="destaquesButtonContainer"></li>
                     <li class="nav-item"><a class="nav-link" href="..//paginas/login-register.html">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="..//paginas/cadastro.html">Cadastro</a></li>
+                    <li class="nav-item nav-dropdown"><a class="nav-link" href="..//paginas/destaques.html">Catalogo</a>
+                        <div class="nav-dropdown-content">
+                            <a href="..//paginas/imagem1.html">Jaleco vinho</a>
+                            <a href="..//paginas/imagem2.html">Jaleco roxo</a>
+                            <a href="..//paginas/imagem3.html">Jaleco cinza</a>
+                            <a href="..//paginas/imagem4.html">Jaleco verde militar</a>
+                            <a href="..//paginas/imagem5.html">Jaleco jade</a>
+                            <a href="..//paginas/imagem6.html">Jaleco preto</a>
+                        </div>
+                    </li>
                     <li id="logoutButtonContainer" class="nav-item" style="display: none;">
                         <button id="logoutButton" class="btn btn-danger">Deslogar</button>
                     <li id="limparButtonContainer" class="nav-item" style="display: none;">
                         <button id="limparButton" class="btn btn-danger">Limpar</button>
                 </ul>
                 <div class="search-container">
-                    <input class="form-control me-2" id="campoBusca" type="search" placeholder="Buscar..."
-                        aria-label="Buscar" oninput="verificarSelecao()" onclick="mostrarSugestoes()">
-
+                    <input class="form-control me-2" id="campoBusca" type="search" placeholder="Buscar..." aria-label="Buscar" oninput="verificarSelecao()" onclick="mostrarSugestoes()">
+                    
                     <!-- Menu suspenso de sugestões -->
                     <div id="suggestionsContainer" class="suggestions">
                         <div class="suggestion-item" onclick="selecionarSugestao('Início')">Início</div>
-                        <div class="suggestion-item" data-type="destaques" onclick="selecionarSugestao('Destaques')">
-                            Destaques</div>
+                        <div class="suggestion-item" data-type="destaques" onclick="selecionarSugestao('Destaques')">Destaques</div>
                         <div class="suggestion-item" onclick="selecionarSugestao('Login')">Login</div>
                         <div class="suggestion-item" onclick="selecionarSugestao('Cadastro')">Cadastro</div>
                     </div>
